@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Profilo Utente{% endblock %}
+
+{% block content %}
+  <header>
+    <h1>Profilo Utente</h1>
+  </header>
+  <main>
+    <section class="user-info">
+      <h2>Ciao, {{ user.username }}!</h2>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>ID Utente:</strong> {{ user.id }}</p>
+      <p><strong>Annunci salvati per gatti:</strong> {{ user.saved_cats|length or "Nessuno" }}</p>
+      <p><strong>Annunci salvati per cani:</strong> {{ user.saved_dogs|length or "Nessuno" }}</p>
+      <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+    </section>
+  </main>
+{% endblock %}

@@ -1,0 +1,160 @@
+/* Reset browser defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative; /* Add positioning context */
+    z-index: 2; /* Ensure it appears above other elements */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center align children horizontally */
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    position: relative; 
+    z-index: 3; 
+}
+  
+  /* Main Section */
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  .adozioni {
+    text-align: center;
+  }
+  
+  .adozioni h2 {
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+  }
+  
+  
+  .bottoni {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    position: relative; /* Add positioning context */
+    z-index: 1; /* Ensure buttons are below header and h1 */
+  }
+  
+  .btn {
+    text-decoration: none;
+    background-color: #1a73e8; /* Primary blue */
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #1669c1;
+  }
+  
+  /* Sticky Footer Navbar */
+  footer {
+    background: #fff;
+    border-top: 1px solid #e5e5e5;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+  
+  .nav-item {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.85rem;
+  }
+  
+  .nav-item .icon {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    color: #1a73e8;
+  }
+  
+  /* Forms (Login & Annuncio pages) */
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.5rem;
+    }
+    .adoption-section h2 {
+      font-size: 1.5rem;
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+    .nav-item .icon {
+      font-size: 1.2rem;
+    }
+    form {
+      padding: 20px;
+    }
+  }

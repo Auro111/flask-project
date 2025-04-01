@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block header %}
+Placeholder Title
+{% endblock %}
+
+{% block content %}
+<section class="adoption-section">
+  <h2>Chi vuoi adottare?</h2>
+  <div class="button-group">
+    <a href="{{ url_for('dogs') }}" class="btn">Cani</a>
+    <a href="{{ url_for('cats') }}" class="btn">Gatti</a>
+  </div>
+</section>
+{% endblock %}

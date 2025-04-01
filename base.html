@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Placeholder Title{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>{% block header %}Placeholder Title{% endblock %}</h1>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer>
+    <nav class="footer-nav">
+      <a href="{{ url_for('index') }}" class="nav-item">
+        <span class="icon">&#8962;</span>
+        <span class="label">Homepage</span>
+      </a>
+      {% if session.get('user_id') %}
+        <a href="{{ url_for('utente') }}" class="nav-item">
+      {% else %}
+        <a href="{{ url_for('login') }}" class="nav-item">
+      {% endif %}
+        <span class="icon">&#128100;</span>
+        <span class="label">Profilo</span>
+      </a>
+      <a href="{{ url_for('annuncio') }}" class="nav-item">
+        <span class="icon">&#43;</span>
+        <span class="label">Add an item</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">&#128269;</span>
+        <span class="label">Search</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">&#128172;</span>
+        <span class="label">Direct messages</span>
+      </a>
+    </nav>
+  </footer>
+</body>
+</html>

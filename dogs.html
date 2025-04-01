@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Cani{% endblock %}
+
+{% block header %}Cani{% endblock %}
+
+{% block content %}
+<section class="pet-list">
+  {% for annuncio in annunci %}
+    <div class="pet-item">
+      <h3>{{ annuncio.title }}</h3>
+      {% if annuncio.image_filename %}
+        <img src="{{ url_for('static', filename='uploads/' ~ annuncio.image_filename) }}" alt="Immagine di {{ annuncio.title }}">
+      {% endif %}
+      <p>{{ annuncio.desc }}</p>
+      <a href="{{ url_for('save_listing', annuncio_id=annuncio.id) }}" class="btn">Salva</a>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}

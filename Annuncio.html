@@ -1,0 +1,40 @@
+{# annuncio.html #}
+{% extends "base.html" %}
+{% block title %}Nuovo Annuncio{% endblock %}
+
+{% block content %}
+  <header>
+    <h1>Nuovo Annuncio</h1>
+  </header>
+  <main>
+    <form action="/add_listing" method="POST" class="annuncio-form" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title">Titolo:</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <!-- New form group for image attachment -->
+      <div class="form-group">
+        <label for="image">Allega un'immagine:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+      </div>
+      <div class="form-group">
+        <label for="desc">Descrizione:</label>
+        <textarea id="desc" name="desc" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="is_cat">
+          <input type="checkbox" id="is_cat" name="is_cat" value="1">
+          È un annuncio per gatti
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="is_dog">
+          <input type="checkbox" id="is_dog" name="is_dog" value="1">
+          È un annuncio per cani
+        </label>
+      </div>
+      <button type="submit" class="btn">Pubblica Annuncio</button>
+    </form>
+  </main>
+  
+{% endblock %}
